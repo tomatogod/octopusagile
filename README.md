@@ -1,2 +1,2 @@
-# octopusagilekasa
-Octopus Energy Kasa
+# octopusagile
+Octopus Energy Agile
