@@ -23,7 +23,7 @@ Example Automation:
   - platform: template
     value_template: >-
       {{ states('sensor.octopus_energy_electricity_xxxxxxxxxx_current_rate') | float
-      <= states('sensor.lowest_8th_electric') | float }}
+      <= states('sensor.lowest_nth_electric') | float }}
   condition: [] 
   action:
   - type: turn_on
