@@ -1,6 +1,6 @@
 # Octopus Energy Agile lowest n'th rate 
 
-Simple python flask app to query the agile api endpoint for the next 24 hours of electri, then output the lowest nth rate of electric for the current day to emable a Homeassistant automation to switch on devices. This differs from the HACS agile integration as the slots don't have to be in a block but can be anywhere in the 24 hour period running 16:00 - 16:00. 
+Simple python flask app to query the agile api endpoint [Octopus Energy API Access](https://octopus.energy/dashboard/new/accounts/personal-details/api-access) for the next 24 hours of electri, then output the lowest nth rate of electric for the current day to emable a Homeassistant automation to switch on devices. This differs from the HACS agile integration as the slots don't have to be in a block but can be anywhere in the 24 hour period running 16:00 - 16:00. 
 
 Use octopusagile.conf to set your OctopusEnergy Apikey, Agile URL and slots (the number of halfhour slots you need i.e. 4 hours: "slots = 8")
 
