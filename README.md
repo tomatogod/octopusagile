@@ -1,16 +1,16 @@
 # Octopus Energy Agile lowest n'th rate 
 
-Simple python flask app to query the [Octopus Energy API](https://octopus.energy/dashboard/new/accounts/personal-details/api-access) and calculate the lowest n'th number of half hour time slots of energy and expose this value to a url that Homeassistant can injest as a sensor and use as an automation to switch on devices. This differs from the HACS agile integration as the slots don't have to be in a block but can be anywhere in the 24 hour period running 16:00 - 16:00. 
+Simple python flask app to query the [Octopus Energy API](https://octopus.energy/dashboard/new/accounts/personal-details/api-access) and calculate the lowest n'th number of half hour time slots of energy and expose this value to a REST style endpoint that Homeassistant can query as a sensor for automations. This differs from the HACS agile integration as the slots don't have to be in a block but can be anywhere over the next day (running 16:00 - 16:00). 
 
-Use octopusagile.conf to set your OctopusEnergy Apikey, Agile URL and slots (the number of halfhour slots you need i.e. 4 hours: "slots = 8")
+Use octopusagile.conf to set your OctopusEnergy Apikey, Agile URL (these can be found on the Octopus API Page linked above) and slots (the number of halfhour slots you need i.e. 4 hours: "slots = 8")
 
-Run the application by using python octopusagile.py
+Run the application by using 'python octopusagile.py'
 
 Test it works by visiting http://localhost:5000/ on the same host and the result should be the nth lowest rate over the next 24 hours.
 
-Edit your hommeassistant configuration to add a new Rest sensor to query this periodically...
+Edit your hommeassistant configuration to add a new Rest sensor to query this periodically, replace <hostdns-ipaddress> with the ip of the host where you run the app, you'll also have to make sure any firewalls are open for port 5000 (default flask app port)
 
-Example template sensor for configuration.yaml
+Example template sensor for Homeassistant configuration.yaml
 
 ```
 - platform: rest
@@ -36,3 +36,7 @@ Example Automation:
   - type: turn_on
   - deviceid: xxxxxx
 ```
+Future Development Plans
+- Get current rate and present to a subpage for query
+- configurable time slot period
+               
