@@ -36,6 +36,9 @@ Example Automation:
   - type: turn_on
   - deviceid: xxxxxx
 ```
+Buy me a coffee to say thanks!
+https://bmc.link/tomatogod
+
 Future Development Plans
 - Get current rate and present to a subpage for query
 - configurable time slot period
